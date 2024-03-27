@@ -3,7 +3,12 @@ var bodyParser = require("body-parser");
 const app = express();
 var jsonParser = bodyParser.json();
 var cors = require("cors");
-var bit = 0;
+
+var cima = 0;
+var baixo = 0;
+var esquerda = 0;
+var direita = 0;
+var garra = 0;
 
 app.use(cors());
 
@@ -15,7 +20,7 @@ app.post("/", jsonParser, function (req, res) {
   direita = req.body.right;
   garra = req.body.garra;
 
-  console.log(bit);
+  //console.log(bit);
   res.end();
 });
 
@@ -23,11 +28,11 @@ app.get("/", function (req, res) {
   res.writeHead(200, { "Content-Type": "application/json", mode: "cors" });
   res.write(
     JSON.stringify({
-      cima: bit,
-      baixo: bit,
-      esquerda: bit,
-      direita: bit,
-      garra: bit,
+      up: cima,
+      down: baixo,
+      left: esquerda,
+      right: direita,
+      garra: garra,
     }),
   );
   res.end();
