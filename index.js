@@ -20,7 +20,7 @@ app.post("/", jsonParser, function (req, res) {
   direita = req.body.right;
   garra = req.body.garra;
 
-  //console.log(bit);
+  console.log(cima);
   res.end();
 });
 
